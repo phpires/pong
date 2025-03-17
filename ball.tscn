@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx7qqd60jbbvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbx31"]
+
+[node name="ball" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cbx31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
