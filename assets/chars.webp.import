@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://cjybocrr7pjto"
+path="res://.godot/imported/chars.webp-c4419aeb2ca1e0decd569ab320a3ee54.fontdata"
+
+[deps]
+
+source_file="res://assets/chars.webp"
+dest_files=["res://.godot/imported/chars.webp-c4419aeb2ca1e0decd569ab320a3ee54.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("0-127")
+kerning_pairs=PackedStringArray()
+columns=16
+rows=8
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2
