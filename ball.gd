@@ -6,10 +6,11 @@ extends RigidBody2D
 @onready var force: Vector2
 @onready var ball_res = 6
 
-func apply_collision_force(unit_new_direction_force_vector: Vector2) -> void:
-	var new_force = unit_new_direction_force_vector * force_magnitude * force
-	apply_force(new_force)
-
+func apply_collision(plane_normal: Vector2) -> void:
+	var unit_normal = plane_normal.normalized()
+	var colision_angle = PI - 2 * linear_velocity.angle_to(unit_normal)
+	linear_velocity = Vector2(cos(colision_angle), sin(colision_angle))
+	
 func get_positive_or_negative():
 	var rng_result = rng.randf_range(-1,1)
 	if rng_result > 0:
