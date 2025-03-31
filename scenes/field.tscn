@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://copxuoxrfvn2"]
+
+[ext_resource type="Texture2D" uid="uid://b5mmy3sp66xth" path="res://assets/pong-field.png" id="1_6pmjc"]
+
+[node name="Field" type="Area2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 639.0
+offset_bottom = 399.0
+texture = ExtResource("1_6pmjc")
+
+[node name="UpLateral" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(13, 10, 11, 2, 623, 0, 625, 10)
+
+[node name="DownLateral" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(13, 387, 624, 386, 624, 398, 13, 398)

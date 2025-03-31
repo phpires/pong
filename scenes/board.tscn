@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://boxab8wn46dwo"]
+
+[ext_resource type="Script" uid="uid://dkiiajh4d3jw7" path="res://scripts/board.gd" id="1_nglv8"]
+[ext_resource type="PackedScene" uid="uid://c68aixltfkfwo" path="res://scenes/player.tscn" id="2_fv4ni"]
+[ext_resource type="PackedScene" uid="uid://cx7qqd60jbbvo" path="res://scenes/ball.tscn" id="3_dun80"]
+[ext_resource type="FontFile" uid="uid://cjybocrr7pjto" path="res://assets/chars.webp" id="3_dxjtj"]
+[ext_resource type="PackedScene" uid="uid://copxuoxrfvn2" path="res://scenes/field.tscn" id="4_fv4ni"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vf5bc"]
+font = ExtResource("3_dxjtj")
+font_size = 10
+
+[node name="board" type="Node2D"]
+script = ExtResource("1_nglv8")
+
+[node name="player" parent="." instance=ExtResource("2_fv4ni")]
+position = Vector2(34, 32)
+
+[node name="player_2" parent="." instance=ExtResource("2_fv4ni")]
+position = Vector2(631, 30)
+player_order = 2
+
+[node name="ball" parent="." instance=ExtResource("3_dun80")]
+position = Vector2(337, 142)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 300.0
+offset_top = 2.0
+offset_right = 366.0
+offset_bottom = 24.0
+text = "GAME"
+label_settings = SubResource("LabelSettings_vf5bc")
+
+[node name="Field" parent="." instance=ExtResource("4_fv4ni")]
+z_index = -50
+position = Vector2(2, 0)
