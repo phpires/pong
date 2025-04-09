@@ -22,7 +22,7 @@ player_order = 2
 
 [node name="ball" parent="." instance=ExtResource("3_dun80")]
 position = Vector2(337, 142)
-acceleration = 3
+acceleration = 1
 
 [node name="Label" type="Label" parent="."]
 visible = false

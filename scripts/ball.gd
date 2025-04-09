@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var acceleration: int
+@export var acceleration: int=0
 @onready var rng = RandomNumberGenerator.new()
 @onready var ball_res = 6
 
@@ -18,11 +18,11 @@ func _ready() -> void:
 	velocity = Vector2(x_vector_sign * rng_x, y_vector_sign*rng_y)
 
 func _physics_process(delta: float) -> void:
-	var acceleration_vector = velocity.normalized() * acceleration
-	#position = position + velocity * delta + (1/2) * acceleration_vector * pow(delta,2)
+	var acceleration_vector = velocity.normalized() * (0.00000001 * acceleration)
+	#print(acceleration_vector)
 	position += velocity * delta
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
-		print(collision_info)
 		velocity = velocity.bounce(collision_info.get_normal())
-		velocity += velocity + acceleration_vector*delta
+		if collision_info.get_collider().is_class("CharacterBody2D"):
+			velocity += velocity + acceleration_vector*delta
