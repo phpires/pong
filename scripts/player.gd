@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 300
 @export var player_order = 1
 
 @onready var screen_size = get_viewport_rect().size
@@ -10,8 +10,8 @@ extends CharacterBody2D
 func _ready() -> void:
 	velocity.x = 0
 
-func set_initial_position() -> Vector2:
-	return Vector2(player_sprite_size/2, player_sprite_size/2)
+func change_speed_by_factor(speed_factor: float) -> void:
+	speed = speed_factor * speed
 	
 func _physics_process(_delta: float) -> void:
 	if player_order == 1:

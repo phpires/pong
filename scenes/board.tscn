@@ -14,15 +14,18 @@ font_size = 10
 script = ExtResource("1_nglv8")
 
 [node name="player" parent="." instance=ExtResource("2_fv4ni")]
-position = Vector2(34, 32)
+position = Vector2(47, 47)
+scale = Vector2(2, 2)
 
 [node name="player_2" parent="." instance=ExtResource("2_fv4ni")]
-position = Vector2(631, 30)
+position = Vector2(647, 47)
+scale = Vector2(2, 2)
 player_order = 2
 
 [node name="ball" parent="." instance=ExtResource("3_dun80")]
-position = Vector2(337, 142)
-acceleration = 1
+modulate = Color(1, 1, 0.0666667, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(311, 143)
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -35,4 +38,3 @@ label_settings = SubResource("LabelSettings_vf5bc")
 
 [node name="Field" parent="." instance=ExtResource("4_fv4ni")]
 z_index = -50
-position = Vector2(2, 0)
