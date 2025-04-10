@@ -17,13 +17,11 @@ func get_positive_or_negative():
 
 func _ready() -> void:
 	velocity = speed_magnitude * Vector2(x_vector_sign * speed_x, y_vector_sign * speed_y)
-	print(acceleration)
+	set_safe_margin(10.0)
 
 func _physics_process(delta: float) -> void:
-	position += velocity * delta
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())
 		if collision_info.get_collider().is_class("CharacterBody2D"):
 			velocity = acceleration*velocity
-			#print("velocity magnitude after collision: "+ str(velocity.length()))
